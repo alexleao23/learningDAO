@@ -8,16 +8,16 @@ class Sql extends PDO{
 		$this->conexao = new PDO("mysql:host=localhost;dbname=dbphp7", "root", "1234");
 	}
 
-	private function setParams($statment, $parameters = [])
+	private function setParams($statement, $parameters = [])
 	{
 		foreach ($parameters as $key => $value) {
-			$this->setParam($key, $value);
+			$this->setParam($statement, $key, $value);
 		}
 	}
 
-	private function setParam($statment, $key, $value)
+	private function setParam($statement, $key, $value)
 	{
-		$statment->bindParam($key, $value);
+		$statement->bindParam($key, $value);
 	}
 
 	public function query($rawQuery, $params = [])
@@ -31,7 +31,7 @@ class Sql extends PDO{
 		return $stmt;
 	}
 
-	public function select($rawQuery, $params = [])
+	public function select($rawQuery, $params = []):array
 	{
 		$stmt = $this->query($rawQuery, $params);
 
