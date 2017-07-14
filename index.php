@@ -1,5 +1,4 @@
 <?php
-
 require_once("config.php");
 
 /*$sql = new Sql();
@@ -20,7 +19,11 @@ echo json_encode($usuario);*/
 //echo json_encode($search);
 
 //Carrega um usuário usando o login e a senha
-$usuario = new Usuario();
-$usuario->login("Alexander","12345678901");
-echo $usuario;
+//$usuario = new Usuario();
+//$usuario->login("Alexander","12345678901");
+//echo $usuario;
+
+$aluno = new Usuario("aluno", "@lun0");
+$aluno->insert();
+echo $aluno;
 ?>
