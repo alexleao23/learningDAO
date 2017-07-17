@@ -28,11 +28,16 @@ echo json_encode($usuario);*/
 //$aluno->insert();
 //echo $aluno;
 
+//Alterar um usuário
+//$usuario = new Usuario();
+//$usuario->loadById(8);
+//$usuario->update("Professor", "!@#$%");
+//echo $usuario;
+
+//Deletar um usuário
 $usuario = new Usuario();
-
-$usuario->loadById(8);
-
-$usuario->update("Professor", "!@#$%");
-
+$usuario->loadById(10);
+$usuario->delete();
 echo $usuario;
+
 ?>
